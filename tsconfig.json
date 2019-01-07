@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ionic-angular-theme-switch": [
+        "dist/ionic-angular-theme-switch"
+      ],
+      "ionic-angular-theme-switch/*": [
+        "dist/ionic-angular-theme-switch/*"
+      ]
+    }
   }
 }

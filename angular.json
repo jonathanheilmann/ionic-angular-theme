@@ -129,6 +129,41 @@
           }
         }
       }
+    },
+    "ionic-angular-theme-switch": {
+      "root": "projects/ionic-angular-theme-switch",
+      "sourceRoot": "projects/ionic-angular-theme-switch/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ionic-angular-theme-switch/tsconfig.lib.json",
+            "project": "projects/ionic-angular-theme-switch/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ionic-angular-theme-switch/src/test.ts",
+            "tsConfig": "projects/ionic-angular-theme-switch/tsconfig.spec.json",
+            "karmaConfig": "projects/ionic-angular-theme-switch/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ionic-angular-theme-switch/tsconfig.lib.json",
+              "projects/ionic-angular-theme-switch/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ionic-angular-theme"
