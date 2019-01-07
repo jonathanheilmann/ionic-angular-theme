@@ -141,8 +141,4 @@ Type: `string`
 
 ## Changelog
 
-### 0.0.2
-- Fixed initial release
-
-### 0.0.1
-- Initial release
+[CHANGELOG.md](https://github.com/jonathanheilmann/ionic-angular-theme/blob/master/projects/ionic-angular-theme-switch/CHANGELOG.md)
