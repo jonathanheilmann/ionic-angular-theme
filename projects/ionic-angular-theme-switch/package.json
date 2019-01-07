@@ -11,6 +11,14 @@
   ],
   "author": "Jonathan Heilmann <mail@jonathan-heilmann.de>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathanheilmann/ionic-angular-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonathanheilmann/ionic-angular-theme/issues"
+  },
+  "homepage": "https://github.com/jonathanheilmann/ionic-angular-theme",
   "peerDependencies": {
     "@angular/common": "^7.1.4",
     "@angular/core": "^7.1.0",
