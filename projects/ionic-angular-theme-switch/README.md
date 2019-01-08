@@ -62,7 +62,7 @@ For advanced application colors see: https://beta.ionicframework.com/docs/themin
        
          'ion-background-color': '#1b2b34',
          'ion-text-color': '#fff'
-       });
+       }, 'dark');
  
 5. To load the default ionic theme call
 
@@ -80,6 +80,10 @@ Set theme with given colors.
 Description: Object of colors/CSS variables to set.  
 Type: `IonicColors`  
 Default: `{}`
+2. **name**  
+Description: Theme name  
+Type: `string`  
+Default: `` (empty string)
 
 ### setVariable()
 Set a single CSS variable.
@@ -94,6 +98,9 @@ Type: `string`
 
 ### getStoredTheme()
 **Returns:** Promise with the actual stored theme as string.
+
+### getStoredThemeName()
+**Returns:** Promise with the actual stored theme name.
 
 
 ## Interfaces

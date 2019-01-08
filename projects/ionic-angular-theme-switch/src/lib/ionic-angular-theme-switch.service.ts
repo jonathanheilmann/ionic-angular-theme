@@ -9,6 +9,7 @@ import Color from 'color';
 })
 export class IonicAngularThemeSwitchService {
   protected static STORAGE_THEME_KEY = 'IonicAngularThemeSwitch_Theme';
+  protected static STORAGE_THEME_NAME_KEY = 'IonicAngularThemeSwitch_ThemeName';
 
   constructor(
     @Inject(DOCUMENT) private doc: Document,
@@ -20,10 +21,11 @@ export class IonicAngularThemeSwitchService {
   }
 
   // Override all global variables with a new theme
-  setTheme(theme: IonicColors = {}): void {
+  setTheme(theme: IonicColors = {}, name: string = ''): void {
     const cssText = this.CSSTextGenerator(theme);
     this.setGlobalCSS(cssText);
     this.storage.set(IonicAngularThemeSwitchService.STORAGE_THEME_KEY, cssText);
+    this.storage.set(IonicAngularThemeSwitchService.STORAGE_THEME_NAME_KEY, name);
   }
 
   // Define a single CSS variable
@@ -36,7 +38,11 @@ export class IonicAngularThemeSwitchService {
   }
 
   async getStoredTheme(): Promise<string> {
-    return await this.storage.get(IonicAngularThemeSwitchService.STORAGE_THEME_KEY);
+    return this.storage.get(IonicAngularThemeSwitchService.STORAGE_THEME_KEY);
+  }
+
+  async getStoredThemeName(): Promise<string> {
+    return this.storage.get(IonicAngularThemeSwitchService.STORAGE_THEME_NAME_KEY);
   }
 
   private CSSTextGenerator(colors: IonicColors = {}) {
