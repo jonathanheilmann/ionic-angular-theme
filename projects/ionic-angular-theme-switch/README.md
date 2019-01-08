@@ -3,13 +3,15 @@
 This ionic angular switch theme service can be used to easily change your app's theme on the fly.  
 The actual theme will be stored and restored on reload or revisitation.
 
+To simplify usage, this library provides a component to toggle between two themes.
+
 ---
 
 Inspired by:  
 https://angularfirebase.com/lessons/css-variables-in-ionic-4/  
 https://github.com/AngularFirebase/128-ionic4-theme-generator
 
-# Integrate in Ionic v4 project
+# Integrate service in Ionic v4 project
 For basic theming see: https://beta.ionicframework.com/docs/theming/color-generator  
 For advanced application colors see: https://beta.ionicframework.com/docs/theming/advanced#application-colors
 
@@ -143,6 +145,80 @@ Type: `string`
   'ion-placeholder-color'?: string;
 
   [key: string]: string;
+}
+```
+
+# Components
+
+## theme-switch-toggle
+This component should be used if there is a `default` and an `alternative` theme selectable by user via [toggle](https://beta.ionicframework.com/docs/api/toggle).
+
+### Usage
+
+**Component**:  
+```typescript
+import { ToggleThemes } from 'ionic-angular-theme-switch';
+
+public themes: ToggleThemes = {
+  default: {
+    primary: '#549ee7',
+    secondary: '#5fb3b3',
+    tertiary: '#fac863',
+    success: '#90d089',
+    warning: '#f99157',
+    danger: '#ec5f67',
+    light: '#d8dee9',
+    medium: '#65737e',
+    dark: '#1b2b34',
+
+    'ion-background-color': '#1b2b34',
+    'ion-text-color': '#fff'
+  },
+  alternative: {
+    primary: '#ff7f50',
+    secondary: '#17deee',
+    tertiary: '#ff4162',
+    success: '#39ff14',
+    warning: '#ffce00',
+    danger: '#f04141',
+    light: '#f4f5f8',
+    medium: '#989aa2',
+    dark: '#222428',
+
+    'ion-background-color': '#778899'
+  }
+}
+```
+
+**Template**:  
+```html
+<theme-switch-toggle [themes]="themes"></theme-switch-toggle>
+```
+
+### Properties
+
+#### themes
+Object of `default` and `alternative` theme colors.  
+**Attribute**: `themes`  
+**Type**: `ToggleThemes`
+
+#### color
+Inherited from [ion-toggle](https://beta.ionicframework.com/docs/api/toggle#properties)
+
+#### disabled
+Inherited from [ion-toggle](https://beta.ionicframework.com/docs/api/toggle#properties)
+
+#### mode
+Inherited from [ion-toggle](https://beta.ionicframework.com/docs/api/toggle#properties)
+
+### Interfaces
+
+#### ToggleThemes
+
+```typescript
+{
+  default: IonicColors;
+  alternative: IonicColors;
 }
 ```
 

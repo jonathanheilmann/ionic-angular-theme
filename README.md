@@ -12,3 +12,9 @@ Run:
 - `ng build ionic-angular-theme-switch`
 - `cd dist/ionic-angular-theme-switch`
 - `npm publish`
+
+Run and publish:  
+`ng build ionic-angular-theme-switch && cd dist/ionic-angular-theme-switch && npm publish && cd ../../`
+
+Build and publish **dev**:  
+`ng build ionic-angular-theme-switch && cd dist/ionic-angular-theme-switch && npm publish --tag dev && cd ../../`

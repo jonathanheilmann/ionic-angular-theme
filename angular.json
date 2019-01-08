@@ -134,7 +134,7 @@
       "root": "projects/ionic-angular-theme-switch",
       "sourceRoot": "projects/ionic-angular-theme-switch/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "theme-switch",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
