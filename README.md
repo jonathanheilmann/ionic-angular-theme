@@ -1,6 +1,6 @@
 # IonicAngularTheme
 
-Angular application to holde ionic angular theme libraries
+Ionic angular application to hold ionic-angular-theme libraries and providing a simple working example.
 
 How to build a library:  
 [https://medium.com/@tomsu/how-to-build-a-library-for-angular-apps-4f9b38b0ed11](https://medium.com/@tomsu/how-to-build-a-library-for-angular-apps-4f9b38b0ed11)
@@ -8,13 +8,13 @@ How to build a library:
 ## ionic-angular-theme-switch
 
 ### Deploy 
-Run:
+Build and publish:
 - `ng build ionic-angular-theme-switch`
 - `cd dist/ionic-angular-theme-switch`
 - `npm publish`
 
-Run and publish:  
+Build and publish in one step:  
 `ng build ionic-angular-theme-switch && cd dist/ionic-angular-theme-switch && npm publish && cd ../../`
 
-Build and publish **dev**:  
+Build and publish tag **dev** in one step:  
 `ng build ionic-angular-theme-switch && cd dist/ionic-angular-theme-switch && npm publish --tag dev && cd ../../`
