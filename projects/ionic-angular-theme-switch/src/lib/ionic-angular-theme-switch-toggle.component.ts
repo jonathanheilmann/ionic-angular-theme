@@ -1,17 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IonicAngularThemeSwitchService, IonicColors } from './ionic-angular-theme-switch.service';
+
+// IonToggle is not required as module, but used by tslint in component template
+import { IonToggle } from '@ionic/angular';
 
 @Component({
   selector: 'theme-switch-toggle',
+  // changeDetection: 0,
   template: `
-    <ion-toggle (ionChange)="toggleTheme($event)"
+    <ion-toggle (ionChange)="onIonChange($event)"
+                (ionFocus)="onIonFocus($event)"
+                (ionBlur)="onIonBlur($event)"
                 [checked]="isToggleChecked"
                 [color]="color"
                 [disabled]="disabled"
                 [mode]="mode">
     </ion-toggle>
-  `,
-  styles: []
+  `
 })
 export class IonicAngularThemeSwitchToggleComponent implements OnInit {
   @Input() color: string;
@@ -22,12 +27,30 @@ export class IonicAngularThemeSwitchToggleComponent implements OnInit {
     alternative: {}
   };
 
-  public isToggleChecked = false;
-  private isInitialized = false;
+  @Output() ionChange: EventEmitter<CustomEvent> = new EventEmitter();
+  @Output() ionFocus: EventEmitter<CustomEvent> = new EventEmitter();
+  @Output() ionBlur: EventEmitter<CustomEvent> = new EventEmitter();
 
-  constructor(protected ionicAngularThemeSwitchService: IonicAngularThemeSwitchService) {
+  public isToggleChecked = false;
+  protected isInitialized = false;
+
+  /**
+   * Constructor detaches ChangeDetectorRef, as otherwise ion-toggle styles are missing.
+   * ChangeDetectorRef should be reattached after initializing component in ngOnInit().
+   *
+   * @param changeDetectorRef
+   * @param ionicAngularThemeSwitchService
+   */
+  constructor(
+    protected changeDetectorRef: ChangeDetectorRef,
+    protected ionicAngularThemeSwitchService: IonicAngularThemeSwitchService
+  ) {
+    changeDetectorRef.detach();
   }
 
+  /**
+   * Initialize component by setting toggle check state and reattach ChangeDetectorRef.
+   */
   async ngOnInit() {
     const storedThemeName = await this.ionicAngularThemeSwitchService.getStoredThemeName();
 
@@ -37,10 +60,19 @@ export class IonicAngularThemeSwitchToggleComponent implements OnInit {
       this.isToggleChecked = storedThemeName === 'alternative';
     }
 
+    this.changeDetectorRef.reattach();
+
     this.isInitialized = true;
   }
 
-  public toggleTheme(event: CustomEvent) {
+  /**
+   * Handle toggle changes by changing theme and pass ionChange event to parent.
+   *
+   * @param event
+   */
+  public onIonChange(event: CustomEvent) {
+    this.ionChange.emit(event);
+
     if (this.isInitialized === false) {
       return;
     }
@@ -51,6 +83,24 @@ export class IonicAngularThemeSwitchToggleComponent implements OnInit {
       this.isToggleChecked ? this.themes.alternative : this.themes.default,
       this.isToggleChecked ? 'alternative' : 'default'
     );
+  }
+
+  /**
+   * Pass ionFocus event to parent.
+   *
+   * @param event
+   */
+  public onIonFocus(event: CustomEvent) {
+    this.ionFocus.emit(event);
+  }
+
+  /**
+   * Pass ionBlur event to parent.
+   *
+   * @param event
+   */
+  public onIonBlur(event: CustomEvent) {
+    this.ionBlur.emit(event);
   }
 
 }

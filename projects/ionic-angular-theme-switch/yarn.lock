@@ -2,49 +2,27 @@
 # yarn lockfile v1
 
 
-"@ionic/storage@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@ionic/storage/-/storage-2.2.0.tgz#ac181991d3bfc8352a5400efb5e9faa5e76b5d4b"
-  integrity sha512-2pszrzmI+fAar2Rx0WmJDVpc15D1k5tvLkB49NLYWJ2pOMaO/3/vp7mg/mEbg3rdsPE9FRbYI6vdKjQ2pP1EWA==
+"@ionic/angular@^4.0.0-rc.1":
+  version "4.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@ionic/angular/-/angular-4.0.0-rc.1.tgz#e3c6d195279736dbf60b8637df12871e73b7e8de"
+  integrity sha512-BoNynQ7s+9v4D/yOg6Po33c8svL3HLrL623cmU2CeXIh8F7c4DTlyn+vE6x1ifWrlHucLc5KmMCGd5YqzsGfNw==
   dependencies:
-    localforage "1.7.1"
-    localforage-cordovasqlitedriver "1.7.0"
-    tslib "^1.7.1"
+    "@ionic/core" "4.0.0-rc.1"
+    tslib "^1.9.3"
 
-immediate@~3.0.5:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
-  integrity sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=
-
-lie@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
-  integrity sha1-mkNrLMd0bKWd56QfpGmz77dr2H4=
+"@ionic/core@4.0.0-rc.1":
+  version "4.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-4.0.0-rc.1.tgz#079026134cad35066e2eb1953886c41c58361e17"
+  integrity sha512-HGMjSq0hW7xVczTDib3tJ1aLi6RgE6R3spKWRiEsVvuBz3WGrLAuG6ASFic/U1k5LLG6vyJoWs4qvZ24b3dXag==
   dependencies:
-    immediate "~3.0.5"
+    ionicons "4.5.1"
 
-localforage-cordovasqlitedriver@1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/localforage-cordovasqlitedriver/-/localforage-cordovasqlitedriver-1.7.0.tgz#8b93957759ee688d3a58d5ba7c0477f6ccb53838"
-  integrity sha1-i5OVd1nuaI06WNW6fAR39sy1ODg=
-  dependencies:
-    localforage ">=1.5.0"
+ionicons@4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-4.5.1.tgz#a180e8948256e6337c2d290eb07f9113dc7b09eb"
+  integrity sha512-zqfkjpPKsdzzXePdE03IRw6xt7B6N3fcN/7NepyniuEWhKZLy7YpdZLegEwBmKeciXi7rIcv1O/hHJTdokUwXQ==
 
-localforage@1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.7.1.tgz#e4927e042302b864db30f3211f13b5c6f0de965d"
-  integrity sha1-5JJ+BCMCuGTbMPMhHxO1xvDell0=
-  dependencies:
-    lie "3.1.1"
-
-localforage@>=1.5.0:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.7.3.tgz#0082b3ca9734679e1bd534995bdd3b24cf10f204"
-  integrity sha512-1TulyYfc4udS7ECSBT2vwJksWbkwwTX8BzeUIiq8Y07Riy7bDAAnxDaPU/tWyOVmQAcWJIEIFP9lPfBGqVoPgQ==
-  dependencies:
-    lie "3.1.1"
-
-tslib@^1.7.1:
+tslib@^1.9.3:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==

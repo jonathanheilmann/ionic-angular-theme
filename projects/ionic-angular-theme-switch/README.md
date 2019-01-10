@@ -17,7 +17,8 @@ For advanced application colors see: https://beta.ionicframework.com/docs/themin
 
 
 1. Resolve peer dependencies:  
-`yarn add @angular/common @angular/core @ionic/storage color`
+`yarn add @angular/common @angular/core @ionic/angular @ionic/storage color`
+
 1. Add `IonicAngularThemeSwitchService` to your `AppModule`'s `providers` and `IonicStorageModule.forRoot()` to your `AppModule`'s `imports` 
  
        import { IonicAngularThemeSwitchService } from 'ionic-angular-theme-switch';
@@ -155,45 +156,75 @@ This component should be used if there is a `default` and an `alternative` theme
 
 ### Usage
 
-**Component**:  
-```typescript
-import { ToggleThemes } from 'ionic-angular-theme-switch';
+1. Resolve peer dependencies:  
+`yarn add @angular/common @angular/core @ionic/angular @ionic/storage color`
 
-public themes: ToggleThemes = {
-  default: {
-    primary: '#549ee7',
-    secondary: '#5fb3b3',
-    tertiary: '#fac863',
-    success: '#90d089',
-    warning: '#f99157',
-    danger: '#ec5f67',
-    light: '#d8dee9',
-    medium: '#65737e',
-    dark: '#1b2b34',
+1. Add `IonicAngularThemeSwitchToggleModule.forRoot()` to your `AppModule`'s `imports` 
+ 
+       import { IonicAngularThemeSwitchToggleModule } from 'ionic-angular-theme-switch';
+        
+       @NgModule({
+         imports: [
+           ...
+           IonicAngularThemeSwitchToggleModule.forRoot(),
+           ...
+         ]
+       })
+       export class AppModule {}
 
-    'ion-background-color': '#1b2b34',
-    'ion-text-color': '#fff'
-  },
-  alternative: {
-    primary: '#ff7f50',
-    secondary: '#17deee',
-    tertiary: '#ff4162',
-    success: '#39ff14',
-    warning: '#ffce00',
-    danger: '#f04141',
-    light: '#f4f5f8',
-    medium: '#989aa2',
-    dark: '#222428',
+1. Add `IonicAngularThemeSwitchToggleModule` to your `NgModule` `imports` where you are using the component
 
-    'ion-background-color': '#778899'
-  }
-}
-```
-
-**Template**:  
-```html
-<theme-switch-toggle [themes]="themes"></theme-switch-toggle>
-```
+       import { IonicAngularThemeSwitchToggleModule } from 'ionic-angular-theme-switch';
+        
+       @NgModule({
+         imports: [
+           ...
+           IonicAngularThemeSwitchToggleModule,
+           ...
+         ]
+       })
+       export class MyPageModule {}
+       
+1. Integrate component  
+    **TypeScript**:  
+    ```typescript
+    import { ToggleThemes } from 'ionic-angular-theme-switch';
+    
+    public themes: ToggleThemes = {
+      default: {
+        primary: '#549ee7',
+        secondary: '#5fb3b3',
+        tertiary: '#fac863',
+        success: '#90d089',
+        warning: '#f99157',
+        danger: '#ec5f67',
+        light: '#d8dee9',
+        medium: '#65737e',
+        dark: '#1b2b34',
+    
+        'ion-background-color': '#1b2b34',
+        'ion-text-color': '#fff'
+      },
+      alternative: {
+        primary: '#ff7f50',
+        secondary: '#17deee',
+        tertiary: '#ff4162',
+        success: '#39ff14',
+        warning: '#ffce00',
+        danger: '#f04141',
+        light: '#f4f5f8',
+        medium: '#989aa2',
+        dark: '#222428',
+    
+        'ion-background-color': '#778899'
+      }
+    }
+    ```
+    
+    **HTML Template**:  
+    ```html
+    <theme-switch-toggle [themes]="themes"></theme-switch-toggle>
+    ```
 
 ### Properties
 
