@@ -4,9 +4,7 @@ import { Storage } from '@ionic/storage';
 import Color from 'color';
 
 /** @dynamic */
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class IonicAngularThemeSwitchService {
   protected static STORAGE_THEME_KEY = 'IonicAngularThemeSwitch_Theme';
   protected static STORAGE_THEME_NAME_KEY = 'IonicAngularThemeSwitch_ThemeName';

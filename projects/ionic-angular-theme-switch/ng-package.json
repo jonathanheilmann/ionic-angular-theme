@@ -4,6 +4,7 @@
   "lib": {
     "entryFile": "src/public_api.ts",
     "umdModuleIds": {
+      "@ionic/angular": "^4.0.0-rc.1",
       "@ionic/storage": "^2.2.0",
       "color": "^3.1.0"
     }
