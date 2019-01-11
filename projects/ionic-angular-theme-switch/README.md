@@ -250,6 +250,18 @@ Inherited from [ion-toggle](https://beta.ionicframework.com/docs/api/toggle#prop
 #### mode
 Inherited from [ion-toggle](https://beta.ionicframework.com/docs/api/toggle#properties)
 
+### Events
+
+### ionBlur
+Inherited from [ion-toggle](https://beta.ionicframework.com/docs/api/toggle#events)
+
+### ionChange
+Inherited from [ion-toggle](https://beta.ionicframework.com/docs/api/toggle#events)  
+ionChange is emitted **before** change is processed by this component!
+
+### ionFocus
+Inherited from [ion-toggle](https://beta.ionicframework.com/docs/api/toggle#events)
+
 ### Interfaces
 
 #### ToggleThemes
