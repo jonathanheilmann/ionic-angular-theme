@@ -13,8 +13,10 @@ export class IonicAngularThemeSwitchService {
     @Inject(DOCUMENT) private doc: Document,
     private storage: Storage
   ) {
-    storage.get(IonicAngularThemeSwitchService.STORAGE_THEME_KEY).then(cssText => {
-      this.setGlobalCSS(cssText);
+    this.storage.get(IonicAngularThemeSwitchService.STORAGE_THEME_KEY).then(cssText => {
+      if (cssText) {
+        this.setGlobalCSS(cssText);
+      }
     });
   }
 

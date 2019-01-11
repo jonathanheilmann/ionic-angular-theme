@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Introduction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h1>ionic-angular-theme-switch</h1>
+
+  <h2>What does the library do?</h2>
+  <p>
+    ionic-angular-theme-switch service can be used to easily change your app's theme on the fly.<br>
+    The actual theme will be stored and restored on reload or revisitation.
+  </p>
+  <p>
+    To simplify usage, this library provides a component to toggle between two themes.
+  </p>
+
+  <h2>What does this app do?</h2>
+  <p>
+    This app aims to provide some examples on how to implement the service and the component into your ionic angular
+    app.
+  </p>
+  <p class="warning">
+    When navigating, the theme is reset to default one in this app. Thus each demo page should be seen as a single
+    app.<br>
+    On reload or revisitation of the last opened demo page, theme is going to restored as it would do in any other
+    app.<br>
+    &nbsp;<br>
+    This inconvenience is required to present all variants of library usage in one app.
+  </p>
+  <h3>Service</h3>
+  <ion-button [color]="'light'" [routerLink]="['/service']" [routerDirection]="'forward'">
+    Demo
+  </ion-button>
+
+  <h3>Components</h3>
+  <ion-button [color]="'light'" [routerLink]="['/switch-theme-toggle']" [routerDirection]="'forward'">
+    switch-theme-toggle demo
+  </ion-button>
+
+  <h2>How do I run this app?</h2>
+  <ol>
+    <li>
+      Clone GitHub repository <code>jonathanheilmann/ionic-angular-theme</code><br>
+      (<code>$git clone git@github.com:jonathanheilmann/ionic-angular-theme.git</code>)
+    </li>
+    <li>
+      Navigate <code>$cd ionic-angular-theme</code>
+    </li>
+    <li>
+      Install dependencies <code>$yarn install</code>
+    </li>
+    <li>
+      Build library <code>$ng build ionic-angular-theme-switch</code>
+    </li>
+    <li>
+      Run <code>$yarn start</code>
+    </li>
+  </ol>
+
+</ion-content>

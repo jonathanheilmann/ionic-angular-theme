@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Service demo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h2>What does it do?</h2>
+  <p>
+    The service should be used if you like to handle themes yourself without any of the provided components.
+  </p>
+
+  <h2>Example</h2>
+  <p>
+    This page provides some alternative themes selectable by multiple buttons.
+  </p>
+  <ion-list>
+    <ion-item [button]="true" (click)="setDefaultTheme()" [class.active-item]="!selectedTheme">
+      <ion-label>
+        Default theme
+      </ion-label>
+    </ion-item>
+    <ion-item [button]="true" (click)="setVibrantTheme()" [class.active-item]="selectedTheme === 'vibrant'">
+      <ion-label>
+        Vibrant theme
+      </ion-label>
+    </ion-item>
+    <ion-item [button]="true" (click)="setDarkTheme()" [class.active-item]="selectedTheme === 'dark'">
+      <ion-label>
+        Dark theme
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <h2>Page code</h2>
+  <!-- todo: add real link -->
+  <a href="https://github.com/jonathanheilmann/ionic-angular-theme/tree/master/src/app/pages/service" target="_blank"
+     title="Open GitHub to view page code">View page code on Github</a>
+
+  <h2>Component instructions/documentation</h2>
+  <a
+    href="https://github.com/jonathanheilmann/ionic-angular-theme/tree/master/projects/ionic-angular-theme-switch#integrate-service-in-ionic-v4-project"
+    target="_blank" title="Open GitHub to view service instructions/documentation">View service
+    instructions/documentation on Github</a>
+
+</ion-content>
