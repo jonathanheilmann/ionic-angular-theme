@@ -5,9 +5,17 @@ The actual theme will be stored and restored on reload or revisitation.
 
 To simplify usage, this library provides a component to toggle between two themes.
 
----
+## Demo app
+The ionic angular application holding this library provides a demo on how to use the service or available components.  
+To run this app, follow these steps:
+1. Clone GitHub repository `jonathanheilmann/ionic-angular-theme`  
+ (`$git clone https://github.com/jonathanheilmann/ionic-angular-theme.git`)
+1. Navigate `$cd ionic-angular-theme`
+1. Install dependencies `$yarn install`
+1. Build library `$ng build ionic-angular-theme-switch`
+1. Run `$yarn start`
 
-Inspired by:  
+## Inspired by
 https://angularfirebase.com/lessons/css-variables-in-ionic-4/  
 https://github.com/AngularFirebase/128-ionic4-theme-generator
 
