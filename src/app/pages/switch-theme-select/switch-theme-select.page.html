@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>switch-theme-select demo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h2>What does it do?</h2>
+  <p>
+    This component should be used if there are multiple themes selectable by
+    user via <a href="https://beta.ionicframework.com/docs/api/select/" target="_blank"
+                title="Open ionic ion-select documentation">select</a>.
+  </p>
+
+  <h2>Example</h2>
+  <p>
+    This page is displayed in default ionic colors. By selecting a theme, the colors are changed to the associated ones.
+  </p>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        Theme
+      </ion-label>
+      <theme-switch-select [themes]="themes" [disabled]="disabled"></theme-switch-select>
+    </ion-item>
+  </ion-list>
+
+  <h2>Page code</h2>
+  <a href="https://github.com/jonathanheilmann/ionic-angular-theme/tree/master/src/app/pages/switch-theme-select" target="_blank"
+     title="Open GitHub to view page code">View page code on Github</a>
+
+  <h2>Component instructions/documentation</h2>
+  <a
+    href="https://github.com/jonathanheilmann/ionic-angular-theme/tree/master/projects/ionic-angular-theme-switch#theme-switch-select"
+    target="_blank" title="Open GitHub to view component instructions/documentation">View component
+    instructions/documentation on Github</a>
+
+</ion-content>
