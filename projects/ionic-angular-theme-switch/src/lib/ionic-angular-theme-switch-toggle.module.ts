@@ -2,6 +2,7 @@ import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders, NgModule 
 import { IonicStorageModule } from '@ionic/storage';
 import { IonicAngularThemeSwitchToggleComponent } from './ionic-angular-theme-switch-toggle.component';
 import { IonicAngularThemeSwitchService } from './ionic-angular-theme-switch.service';
+import { bootstrapIonicAngularThemeSwitch } from './utilies';
 
 @NgModule({
   declarations: [
@@ -33,11 +34,4 @@ export class IonicAngularThemeSwitchToggleModule {
       ]
     };
   }
-}
-
-export function bootstrapIonicAngularThemeSwitch(ionicAngularThemeSwitchService: IonicAngularThemeSwitchService) {
-  // see https://github.com/angular/angular/issues/14485
-  const res = () => {
-  };
-  return res;
 }

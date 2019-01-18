@@ -5,3 +5,4 @@
 export * from './lib/ionic-angular-theme-switch.service';
 export * from './lib/ionic-angular-theme-switch-toggle.component';
 export * from './lib/ionic-angular-theme-switch-toggle.module';
+export * from './lib/utilies';
