@@ -22,7 +22,17 @@ export class SwitchThemeTogglePage {
       medium: '#989aa2',
       dark: '#222428',
 
-      'ion-background-color': '#778899'
+      'ion-background-color': '#778899',
+
+      /* Component Colors */
+      'ion-backdrop-color': '#556677',
+      'ion-overlay-background-color': '#667788',
+
+      'ion-border-color': '#5bff76',
+      'ion-box-shadow-color': '#000',
+
+      'ion-item-background': '#667788',
+      'ion-item-border-color': '#5bff76'
     }
   };
 
