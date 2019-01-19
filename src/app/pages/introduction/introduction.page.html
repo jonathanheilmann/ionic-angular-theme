@@ -17,12 +17,12 @@
     The actual theme will be stored and restored on reload or revisitation.
   </p>
   <p>
-    To simplify usage, this library provides a component to toggle between two themes.
+    To simplify usage, this library provides two components to toggle between two themes.
   </p>
 
   <h2>What does this app do?</h2>
   <p>
-    This app aims to provide some examples on how to implement the service and the component into your ionic angular
+    This app aims to provide some examples on how to implement the service and the components into your ionic angular
     app.
   </p>
   <p class="warning">
@@ -39,6 +39,9 @@
   </ion-button>
 
   <h3>Components</h3>
+  <ion-button [color]="'light'" [routerLink]="['/switch-theme-switch']" [routerDirection]="'forward'">
+    switch-theme-switch demo
+  </ion-button><br>
   <ion-button [color]="'light'" [routerLink]="['/switch-theme-toggle']" [routerDirection]="'forward'">
     switch-theme-toggle demo
   </ion-button>

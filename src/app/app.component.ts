@@ -27,6 +27,10 @@ export class AppComponent {
   ];
   public componentPages = [
     {
+      title: 'switch-theme-select demo',
+      url: '/switch-theme-select'
+    },
+    {
       title: 'switch-theme-toggle demo',
       url: '/switch-theme-toggle'
     }

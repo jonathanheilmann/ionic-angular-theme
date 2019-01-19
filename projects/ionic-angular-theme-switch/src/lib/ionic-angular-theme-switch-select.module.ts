@@ -1,28 +1,30 @@
+import { CommonModule } from '@angular/common';
 import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders, NgModule } from '@angular/core';
 import { IonicStorageModule } from '@ionic/storage';
-import { IonicAngularThemeSwitchToggleComponent } from './ionic-angular-theme-switch-toggle.component';
+import { IonicAngularThemeSwitchSelectComponent } from './ionic-angular-theme-switch-select.component';
 import { IonicAngularThemeSwitchService } from './ionic-angular-theme-switch.service';
 import { bootstrapIonicAngularThemeSwitch } from './utilies';
 
 @NgModule({
   declarations: [
-    IonicAngularThemeSwitchToggleComponent
+    IonicAngularThemeSwitchSelectComponent
   ],
   imports: [
+    CommonModule,
     IonicStorageModule
   ],
   exports: [
-    IonicAngularThemeSwitchToggleComponent
+    IonicAngularThemeSwitchSelectComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 
-export class IonicAngularThemeSwitchToggleModule {
+export class IonicAngularThemeSwitchSelectModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: IonicAngularThemeSwitchToggleModule,
+      ngModule: IonicAngularThemeSwitchSelectModule,
       providers: [
         IonicAngularThemeSwitchService,
         {

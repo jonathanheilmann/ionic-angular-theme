@@ -15,6 +15,9 @@ const routes: Routes = [
   }, {
     path: 'introduction',
     loadChildren: './pages/introduction/introduction.module#IntroductionPageModule'
+  }, {
+    path: 'switch-theme-select',
+    loadChildren: './pages/switch-theme-select/switch-theme-select.module#SwitchThemeSelectPageModule'
   }
 ];
 
