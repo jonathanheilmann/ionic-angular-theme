@@ -24,13 +24,16 @@ Build and watch:
 `ng build ionic-angular-theme-switch --watch`
 
 ### Deploy 
+Build and dry run publish:
+`yarn run build:ionic-angular-theme-switch && cd dist/ionic-angular-theme-switch && npm publish --dry-run && cd ../../`
+
 Build and publish:
-- `ng build ionic-angular-theme-switch`
+- `yarn run build:ionic-angular-theme-switch`
 - `cd dist/ionic-angular-theme-switch`
 - `npm publish`
 
 Build and publish in one step:  
-`ng build ionic-angular-theme-switch && cd dist/ionic-angular-theme-switch && npm publish && cd ../../`
+`yarn run build:ionic-angular-theme-switch && cd dist/ionic-angular-theme-switch && npm publish && cd ../../`
 
 Build and publish tag **dev** in one step:  
-`ng build ionic-angular-theme-switch && cd dist/ionic-angular-theme-switch && npm publish --tag dev && cd ../../`
+`yarn run build:ionic-angular-theme-switch && cd dist/ionic-angular-theme-switch && npm publish --tag dev && cd ../../`
