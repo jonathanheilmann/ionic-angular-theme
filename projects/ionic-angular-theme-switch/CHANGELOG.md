@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unrelease]
 ### Added
+- Add screenshots to REAMDE.md (#7)
 - Add `theme-switch-select` component (#5)
 
 ## [0.2.0] - 2019-01-11
