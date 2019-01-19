@@ -162,6 +162,8 @@ Type: `string`
 ## theme-switch-toggle
 This component should be used if there is a `default` and an `alternative` theme selectable by user via [toggle](https://beta.ionicframework.com/docs/api/toggle).
 
+![theme switch toggle demo](doc/assets/theme-switch-toggle.gif)
+
 ### Usage
 
 1. Resolve peer dependencies:  
@@ -285,6 +287,8 @@ Inherited from [ion-toggle](https://beta.ionicframework.com/docs/api/toggle#even
 
 ## theme-switch-select
 This component should be used if there are multiple themes selectable by user via [select](https://beta.ionicframework.com/docs/api/select).
+
+![theme switch select demo](doc/assets/theme-switch-select.gif)
 
 ### Usage
 
