@@ -24,7 +24,7 @@ Build and watch:
 `ng build ionic-angular-theme-switch --watch`
 
 ### Deploy 
-Build and dry run publish:
+Build and dry run publish:  
 `yarn run build:ionic-angular-theme-switch && cd dist/ionic-angular-theme-switch && npm publish --dry-run && cd ../../`
 
 Build and publish:

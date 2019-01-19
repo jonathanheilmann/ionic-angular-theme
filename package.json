@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:ionic-angular-theme-switch": "ng build ionic-angular-theme-switch && mkdir -p ./dist/ionic-angular-theme-switch/doc/assets && cp -r ./projects/ionic-angular-theme-switch/doc/assets ./dist/ionic-angular-theme-switch/doc/assets",
+    "build:ionic-angular-theme-switch": "ng build ionic-angular-theme-switch",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
