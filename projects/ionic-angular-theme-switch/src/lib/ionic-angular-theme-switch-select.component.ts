@@ -18,7 +18,7 @@ import { IonSelect, IonSelectOption } from '@ionic/angular';
                   [interfaceOptions]="interfaceOptions"
                   [mode]="mode"
                   [okText]="okText"
-                  [selectedText]="selectedText"
+                  [selectedText]="selectedTheme.label || selectedTheme.key"
                   [value]="selectedTheme">
         <ion-select-option *ngFor="let theme of themes" [value]="theme">{{theme.label || theme.key}}</ion-select-option>
       </ion-select>
@@ -33,7 +33,6 @@ export class IonicAngularThemeSwitchSelectComponent implements OnInit {
   @Input() interfaceOptions;
   @Input() mode: 'ios' | 'md';
   @Input() okText: string;
-  @Input() selectedText: null | string | undefined;
   @Input() themes: SelectTheme[] = [];
 
   @Output() ionBlur: EventEmitter<CustomEvent> = new EventEmitter();
@@ -41,7 +40,7 @@ export class IonicAngularThemeSwitchSelectComponent implements OnInit {
   @Output() ionChange: EventEmitter<CustomEvent> = new EventEmitter();
   @Output() ionFocus: EventEmitter<CustomEvent> = new EventEmitter();
 
-  public selectedTheme;
+  public selectedTheme: SelectTheme;
   private isInitialized = false;
 
   /**
@@ -59,17 +58,23 @@ export class IonicAngularThemeSwitchSelectComponent implements OnInit {
   }
 
   /**
-   * Initialize component by setting toggle check state and reattach ChangeDetectorRef.
+   * Initialize component by setting selected theme and reattach ChangeDetectorRef.
    */
   async ngOnInit() {
     const storedThemeName = await this.ionicAngularThemeSwitchService.getStoredThemeName();
 
-    if (!storedThemeName) {
-      const theme: SelectTheme = this.themes[ 0 ] ? this.themes[ 0 ] : { key: '', theme: {} };
-      this.selectedTheme = theme.key;
-      this.ionicAngularThemeSwitchService.setTheme(theme.theme, this.selectedTheme);
-    } else {
-      this.selectedTheme = storedThemeName;
+    if (storedThemeName) {
+      for (let i = 0, len = this.themes.length; i < len; i++) {
+        if (this.themes[i].key === storedThemeName) {
+          this.selectedTheme = this.themes[i];
+          break;
+        }
+      }
+    }
+
+    if (!this.selectedTheme) {
+      this.selectedTheme = this.themes[ 0 ] ? this.themes[ 0 ] : { key: 'default', theme: {} };
+      this.ionicAngularThemeSwitchService.setTheme(this.selectedTheme.theme, this.selectedTheme.key);
     }
 
     this.changeDetectorRef.reattach();
@@ -101,20 +106,14 @@ export class IonicAngularThemeSwitchSelectComponent implements OnInit {
    * @param event
    */
   public onIonChange(event: CustomEvent) {
-    console.log(event);
     this.ionChange.emit(event);
 
     if (this.isInitialized === false) {
       return;
     }
 
-    const selectTheme: SelectTheme = event.detail.value;
-    this.selectedTheme = selectTheme.key;
-
-    this.ionicAngularThemeSwitchService.setTheme(
-      selectTheme.theme,
-      this.selectedTheme
-    );
+    this.selectedTheme = event.detail.value;
+    this.ionicAngularThemeSwitchService.setTheme(this.selectedTheme.theme, this.selectedTheme.key);
   }
 
   /**

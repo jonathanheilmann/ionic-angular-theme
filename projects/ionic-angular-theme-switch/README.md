@@ -433,9 +433,6 @@ Inherited from [ion-select](https://beta.ionicframework.com/docs/api/select#prop
 #### okText
 Inherited from [ion-select](https://beta.ionicframework.com/docs/api/select#properties)
 
-#### selectedText
-Inherited from [ion-select](https://beta.ionicframework.com/docs/api/select#properties)
-
 ### Events
 
 ### ionBlur
