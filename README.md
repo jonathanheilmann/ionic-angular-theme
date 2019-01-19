@@ -19,6 +19,10 @@ To run this app, follow these steps:
 
 ## ionic-angular-theme-switch
 
+### Develop
+Build and watch:
+`ng build ionic-angular-theme-switch --watch`
+
 ### Deploy 
 Build and publish:
 - `ng build ionic-angular-theme-switch`
