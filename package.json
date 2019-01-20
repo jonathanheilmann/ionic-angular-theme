@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "build:ionic-angular-theme-switch && ng build",
+    "build": "ng build",
     "build:ionic-angular-theme-switch": "ng build ionic-angular-theme-switch",
     "test": "ng test",
     "lint": "ng lint",
