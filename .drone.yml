@@ -9,11 +9,10 @@ pipeline:
     commands:
       - npm run build:ionic-angular-theme-switch
       - npm run build
-      - ls -l
-      - cd /
+      - pwd
       - ls -l
       - rm -rf /var/www/de.jonathan-heilmann.ionic-angular-theme/*
-      - cp -a /src/github.com/jonathanheilmann/ionic-angular-theme/www/* /var/www/de.jonathan-heilmann.ionic-angular-theme
+      - cp -a www/* /var/www/de.jonathan-heilmann.ionic-angular-theme
     volumes:
       - /var/www/de.jonathan-heilmann.ionic-angular-theme:/var/www/de.jonathan-heilmann.ionic-angular-theme
 
