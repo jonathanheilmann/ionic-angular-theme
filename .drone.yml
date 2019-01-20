@@ -5,20 +5,20 @@ steps:
   - name: install
     image: node:latest
     commands:
-      - yarn install
+      - npm install
 
   - name: build
     image: node:latest
     commands:
-      - yarn run build:ionic-angular-theme-switch
-      - yarn run build
+      - npm run build:ionic-angular-theme-switch
+      - npm run build
 
-  - name: create bindMountSourcePaths
+  - name: createBindMountSourcePaths
     image: node:latest
     commands:
-      - mkdir /var/www/de.jonathan-heilmann.ionic-angular-theme
-      - mkdir /var/www/de.jonathan-heilmann.ionic-angular-theme.test
-      - mkdir /var/www/de.jonathan-heilmann.ionic-angular-theme.j_
+      - mkdir -p /var/www/de.jonathan-heilmann.ionic-angular-theme
+      - mkdir -p /var/www/de.jonathan-heilmann.ionic-angular-theme.test
+      - mkdir -p /var/www/de.jonathan-heilmann.ionic-angular-theme.j_
 
   - name: master
     image: node:latest
