@@ -1,19 +1,65 @@
-pipeline:
-  install:
+kind: pipeline
+name: default
+
+steps:
+  - name: install
     image: node:latest
     commands:
       - npm install
 
-  build:
+  - name: build
     image: node:latest
     commands:
       - npm run build:ionic-angular-theme-switch
       - npm run build
-      - pwd
-      - ls -l
+
+  - name: master
+    image: node:latest
+    commands:
       - rm -rf /var/www/de.jonathan-heilmann.ionic-angular-theme/*
       - cp -a www/* /var/www/de.jonathan-heilmann.ionic-angular-theme
     volumes:
       - /var/www/de.jonathan-heilmann.ionic-angular-theme:/var/www/de.jonathan-heilmann.ionic-angular-theme
+    when:
+      branch:
+        - master
 
-branches: j_15
+  - name: test
+    image: node:latest
+    commands:
+      - rm -rf /var/www/de.jonathan-heilmann.ionic-angular-theme.test/*
+      - cp -a www/* /var/www/de.jonathan-heilmann.ionic-angular-theme.test
+    volumes:
+      - /var/www/de.jonathan-heilmann.ionic-angular-theme.test:/var/www/de.jonathan-heilmann.ionic-angular-theme.test
+    when:
+      branch:
+        - test
+
+  - name: j_
+    image: node:latest
+    commands:
+      - rm -rf /var/www/de.jonathan-heilmann.ionic-angular-theme.j_/*
+      - cp -a www/* /var/www/de.jonathan-heilmann.ionic-angular-theme.j_
+    volumes:
+      - /var/www/de.jonathan-heilmann.ionic-angular-theme.j_:/var/www/de.jonathan-heilmann.ionic-angular-theme.j_
+    when:
+      ref:
+        - refs/heads/j_*
+
+#pipeline:
+#  install:
+#    image: node:latest
+#    commands:
+#      - npm install
+#
+#  build:
+#    image: node:latest
+#    commands:
+#      - npm run build:ionic-angular-theme-switch
+#      - npm run build
+#      - rm -rf /var/www/de.jonathan-heilmann.ionic-angular-theme/*
+#      - cp -a www/* /var/www/de.jonathan-heilmann.ionic-angular-theme
+#    volumes:
+#      - /var/www/de.jonathan-heilmann.ionic-angular-theme:/var/www/de.jonathan-heilmann.ionic-angular-theme
+#
+#branches: j_15
