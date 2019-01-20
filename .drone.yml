@@ -2,7 +2,7 @@ pipeline:
   install:
     image: node:latest
     commands:
-      - npm install
+      - npm ci
 
   build:
     image: node:latest
