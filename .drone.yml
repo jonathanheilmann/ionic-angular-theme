@@ -31,6 +31,8 @@ steps:
     when:
       branch:
         - master
+      event:
+        - push
 
   - name: test
     image: node:latest
@@ -43,6 +45,8 @@ steps:
     when:
       branch:
         - test
+      event:
+        - push
 
   - name: j_
     image: node:latest
@@ -55,6 +59,8 @@ steps:
     when:
       ref:
         - refs/heads/j_*
+      event:
+        - push
 
 volumes:
   - name: master
