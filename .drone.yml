@@ -1,0 +1,72 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: install
+    image: node:latest
+    commands:
+      - npm install
+
+  - name: build
+    image: node:latest
+    commands:
+      - npm run build:ionic-angular-theme-switch
+      - npm run build
+
+  - name: createBindMountSourcePaths
+    image: node:latest
+    commands:
+      - mkdir -p /var/www/de.jonathan-heilmann.ionic-angular-theme
+      - mkdir -p /var/www/de.jonathan-heilmann.ionic-angular-theme.test
+      - mkdir -p /var/www/de.jonathan-heilmann.ionic-angular-theme.j_
+
+  - name: master
+    image: node:latest
+    commands:
+      - rm -rf /var/www/de.jonathan-heilmann.ionic-angular-theme/*
+      - cp -a www/* /var/www/de.jonathan-heilmann.ionic-angular-theme
+    volumes:
+      - name: master
+        path: /var/www/de.jonathan-heilmann.ionic-angular-theme
+    when:
+      branch:
+        - master
+
+  - name: test
+    image: node:latest
+    commands:
+      - rm -rf /var/www/de.jonathan-heilmann.ionic-angular-theme.test/*
+      - cp -a www/* /var/www/de.jonathan-heilmann.ionic-angular-theme.test
+    volumes:
+      - name: test
+        path: /var/www/de.jonathan-heilmann.ionic-angular-theme.test
+    when:
+      branch:
+        - test
+
+  - name: j_
+    image: node:latest
+    commands:
+      - rm -rf /var/www/de.jonathan-heilmann.ionic-angular-theme.j_/*
+      - cp -a www/* /var/www/de.jonathan-heilmann.ionic-angular-theme.j_
+    volumes:
+      - name: j_
+        path: /var/www/de.jonathan-heilmann.ionic-angular-theme.j_
+    when:
+      ref:
+        - refs/heads/j_*
+
+volumes:
+  - name: master
+    host:
+      path: /var/www/de.jonathan-heilmann.ionic-angular-theme
+  - name: test
+    host:
+      path: /var/www/de.jonathan-heilmann.ionic-angular-theme.test
+  - name: j_
+    host:
+      path: /var/www/de.jonathan-heilmann.ionic-angular-theme.j_
+
+trigger:
+  event:
+    - push

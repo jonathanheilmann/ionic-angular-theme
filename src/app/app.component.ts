@@ -63,7 +63,7 @@ export class AppComponent {
           this.ionicAngularThemeSwitchService.setTheme();
         }
         // Highlight active menu item
-        this.selectedPath = event.url;
+        this.selectedPath = event.url.startsWith('/') ? event.url : '/' + event.url;
         this.storage.set('selectedPath', event.url);
       }
     });

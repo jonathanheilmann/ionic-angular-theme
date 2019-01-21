@@ -18,6 +18,12 @@ const routes: Routes = [
   }, {
     path: 'switch-theme-select',
     loadChildren: './pages/switch-theme-select/switch-theme-select.module#SwitchThemeSelectPageModule'
+  }, {
+    path: 'imprint',
+    loadChildren: './pages/imprint/imprint.module#ImprintPageModule'
+  }, {
+    path: 'privacy-policy',
+    loadChildren: './pages/privacy-policy/privacy-policy.module#PrivacyPolicyPageModule'
   }
 ];
 
