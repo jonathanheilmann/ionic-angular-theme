@@ -6,12 +6,18 @@ steps:
     image: node:latest
     commands:
       - npm install
+    when:
+      event:
+        - push
 
   - name: build
     image: node:latest
     commands:
       - npm run build:ionic-angular-theme-switch
       - npm run build
+    when:
+      event:
+        - push
 
   - name: createBindMountSourcePaths
     image: node:latest
@@ -19,6 +25,9 @@ steps:
       - mkdir -p /var/www/de.jonathan-heilmann.ionic-angular-theme
       - mkdir -p /var/www/de.jonathan-heilmann.ionic-angular-theme.test
       - mkdir -p /var/www/de.jonathan-heilmann.ionic-angular-theme.j_
+    when:
+      event:
+        - push
 
   - name: master
     image: node:latest
