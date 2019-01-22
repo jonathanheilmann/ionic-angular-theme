@@ -6,16 +6,17 @@ import { IonToggle } from '@ionic/angular';
 
 @Component({
   selector: 'theme-switch-toggle',
-  // changeDetection: 0,
   template: `
-    <ion-toggle (ionChange)="onIonChange($event)"
-                (ionFocus)="onIonFocus($event)"
-                (ionBlur)="onIonBlur($event)"
-                [checked]="isToggleChecked"
-                [color]="color"
-                [disabled]="disabled"
-                [mode]="mode">
-    </ion-toggle>
+    <ng-container *ngIf="themes">
+      <ion-toggle (ionChange)="onIonChange($event)"
+                  (ionFocus)="onIonFocus($event)"
+                  (ionBlur)="onIonBlur($event)"
+                  [checked]="isToggleChecked"
+                  [color]="color"
+                  [disabled]="disabled"
+                  [mode]="mode">
+      </ion-toggle>
+    </ng-container>
   `
 })
 export class IonicAngularThemeSwitchToggleComponent implements OnInit {

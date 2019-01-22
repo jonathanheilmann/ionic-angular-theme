@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders, NgModule } from '@angular/core';
 import { IonicStorageModule } from '@ionic/storage';
 import { IonicAngularThemeSwitchToggleComponent } from './ionic-angular-theme-switch-toggle.component';
@@ -9,6 +10,7 @@ import { bootstrapIonicAngularThemeSwitch } from './utilies';
     IonicAngularThemeSwitchToggleComponent
   ],
   imports: [
+    CommonModule,
     IonicStorageModule
   ],
   exports: [
