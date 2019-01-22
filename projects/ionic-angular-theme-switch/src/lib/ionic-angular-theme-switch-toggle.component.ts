@@ -6,7 +6,6 @@ import { IonToggle } from '@ionic/angular';
 
 @Component({
   selector: 'theme-switch-toggle',
-  // changeDetection: 0,
   template: `
     <ng-container *ngIf="themes">
       <ion-toggle (ionChange)="onIonChange($event)"
