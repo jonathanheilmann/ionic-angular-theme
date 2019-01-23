@@ -13,13 +13,13 @@ steps:
       - npm run build:ionic-angular-theme-switch
       - npm run build
 
-  - name: createBindMountSourcePaths
+  - name: create and clear bind mount path
     image: node:latest
     commands:
       - mkdir -p /var/www
-      - rm- rf /var/www
+      - rm -rf /var/www
 
-  - name: master
+  - name: deploy branch master
     image: node:latest
     commands:
       - cp -a www/* /var/www
@@ -30,7 +30,7 @@ steps:
       branch:
         - master
 
-  - name: test
+  - name: deploy branch test
     image: node:latest
     commands:
       - cp -a www/* /var/www
@@ -41,7 +41,7 @@ steps:
       branch:
         - test
 
-  - name: j_*
+  - name: deploy branch j_*
     image: node:latest
     commands:
       - cp -a www/* /var/www
