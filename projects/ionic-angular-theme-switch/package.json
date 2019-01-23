@@ -1,6 +1,6 @@
 {
   "name": "ionic-angular-theme-switch",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Easily change your ionic v4 angular app's theme on the fly, actual theme will be stored and restored on reload or revisitation.",
   "keywords": [
     "ionic",

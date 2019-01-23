@@ -1,0 +1,68 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: install
+    image: node:latest
+    commands:
+      - npm install
+
+  - name: build
+    image: node:latest
+    commands:
+      - npm run build:ionic-angular-theme-switch
+      - npm run build
+
+  - name: create and clear bind mount path
+    image: node:latest
+    commands:
+      - mkdir -p /var/www
+      - rm -rf /var/www
+
+  - name: deploy branch master
+    image: node:latest
+    commands:
+      - cp -a www/* /var/www
+    volumes:
+      - name: master
+        path: /var/www
+    when:
+      branch:
+        - master
+
+  - name: deploy branch test
+    image: node:latest
+    commands:
+      - cp -a www/* /var/www
+    volumes:
+      - name: test
+        path: /var/www
+    when:
+      branch:
+        - test
+
+  - name: deploy branch j_*
+    image: node:latest
+    commands:
+      - cp -a www/* /var/www
+    volumes:
+      - name: j
+        path: /var/www
+    when:
+      ref:
+        - refs/heads/j_*
+
+volumes:
+  - name: master
+    host:
+      path: /var/www/de.jonathan-heilmann.ionic-angular-theme
+  - name: test
+    host:
+      path: /var/www/de.jheilmann.iat.test
+  - name: j
+    host:
+      path: /var/www/de.jheilmann.iat.j
+
+trigger:
+  event:
+    - push

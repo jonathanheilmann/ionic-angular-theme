@@ -39,6 +39,23 @@
               </ion-item>
             </ion-menu-toggle>
           </ion-item-group>
+
+          <ion-item-group>
+            <ion-item-divider [color]="'medium'">
+              <ion-label>About</ion-label>
+            </ion-item-divider>
+
+            <ion-menu-toggle auto-hide="false">
+              <ion-item [routerDirection]="'root'" [routerLink]="'/imprint'" [class.active-item]="selectedPath === '/imprint'">
+                <ion-label>Imprint</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle auto-hide="false">
+              <ion-item [routerDirection]="'root'" [routerLink]="'/privacy-policy'" [class.active-item]="selectedPath === '/privacy-policy'">
+                <ion-label>Privacy Policy</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-item-group>
         </ion-list>
       </ion-content>
     </ion-menu>

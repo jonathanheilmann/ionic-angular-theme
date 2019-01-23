@@ -7,8 +7,11 @@ How to build a library:
 
 ## Demo app
 
-This ionic angular application provides a demo on how to use the service or available components.  
-To run this app, follow these steps:
+This ionic angular application provides a demo on how to use the service or available components.
+
+Current [GutHub branch `master`](https://github.com/jonathanheilmann/ionic-angular-theme/tree/master) can be found here: https://ionic-angular-theme.jonathan-heilmann.de
+  
+To run this app locally, follow these steps:
 1. Clone GitHub repository `jonathanheilmann/ionic-angular-theme`  
  (`$git clone https://github.com/jonathanheilmann/ionic-angular-theme.git`)
 1. Navigate `$cd ionic-angular-theme`
